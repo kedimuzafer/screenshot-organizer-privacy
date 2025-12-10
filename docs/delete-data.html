@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request data deletion for Screenshot Organizer app">
+    <title>Delete Data - Screenshot Organizer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+
+        .content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .info-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        .info-box h3 {
+            color: #0c5460;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .info-box p, .info-box ul {
+            color: #0c5460;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .info-box li {
+            margin-bottom: 8px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #f39c12;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        .warning-box h3 {
+            color: #856404;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .warning-box p {
+            color: #856404;
+        }
+
+        .data-type {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .data-type h4 {
+            color: #495057;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .data-type p {
+            color: #6c757d;
+            font-size: 0.95em;
+            margin-left: 10px;
+        }
+
+        .delete-button {
+            display: inline-block;
+            background: #f39c12;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            text-align: center;
+            margin: 20px 0;
+            transition: background 0.3s;
+        }
+
+        .delete-button:hover {
+            background: #e67e22;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #3498db;
+            text-decoration: none;
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .separator {
+            border-top: 2px solid #e9ecef;
+            margin: 30px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .delete-button {
+                padding: 12px 30px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Delete Your Data</h1>
+            <p class="subtitle">Screenshot Organizer</p>
+        </header>
+
+        <div class="content">
+            <div class="info-box">
+                <h3>📋 Data Deletion Request</h3>
+                <p>You can request the deletion of specific types of data without deleting your entire account. Your account will remain active, but the selected data will be permanently removed.</p>
+            </div>
+
+            <h2 style="color: #2c3e50; margin-bottom: 20px; font-size: 1.5em;">Types of Data You Can Delete:</h2>
+
+            <div class="data-type">
+                <h4>📷 Screenshots and Images</h4>
+                <p>All uploaded screenshots will be permanently deleted from cloud storage (Cloudflare R2)</p>
+            </div>
+
+            <div class="data-type">
+                <h4>📝 Extracted Data and Analysis</h4>
+                <p>All AI-generated analysis, extracted text, financial information, contact details, categories, tags, and summaries</p>
+            </div>
+
+            <div class="data-type">
+                <h4>🔍 Search History</h4>
+                <p>Your search queries and search history</p>
+            </div>
+
+            <div class="data-type">
+                <h4>⚙️ App Preferences</h4>
+                <p>Your app settings, preferences, and customizations</p>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="warning-box">
+                <h3>⚠️ Data That Will Be Kept:</h3>
+                <p>The following data will be retained to maintain your account functionality:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Your account information (name, email, profile picture)</li>
+                    <li>Account creation date and login history</li>
+                    <li>Subscription status and trial information</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>⏱️ Processing Time:</h3>
+                <ul>
+                    <li>Data deletion requests are processed within <strong>30 days</strong></li>
+                    <li>You will receive a confirmation email once deletion is complete</li>
+                    <li>After deletion, this action cannot be undone</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>📧 How to Request Data Deletion:</h3>
+                <ul>
+                    <li>Click the button below to send a data deletion request email</li>
+                    <li>Include your registered email address</li>
+                    <li>Specify which types of data you want deleted (or "all data")</li>
+                    <li>Use the subject line: <strong>"Data Deletion Request"</strong></li>
+                </ul>
+            </div>
+
+            <div class="button-container">
+                <a href="mailto:readarabicapp@gmail.com?subject=Data%20Deletion%20Request&body=Hello%2C%0D%0A%0D%0AI%20would%20like%20to%20request%20the%20deletion%20of%20my%20data%20from%20Screenshot%20Organizer.%0D%0A%0D%0ARegistered%20Email%3A%20%5BEnter%20your%20email%20here%5D%0D%0A%0D%0APlease%20delete%20the%20following%20data%20(select%20all%20that%20apply)%3A%0D%0A%5B%20%5D%20All%20screenshots%20and%20images%0D%0A%5B%20%5D%20Extracted%20data%20and%20analysis%20results%0D%0A%5B%20%5D%20Search%20history%0D%0A%5B%20%5D%20App%20preferences%0D%0A%5B%20%5D%20All%20of%20the%20above%0D%0A%0D%0AI%20understand%20that%3A%0D%0A-%20This%20action%20is%20permanent%20and%20cannot%20be%20undone%0D%0A-%20My%20account%20will%20remain%20active%0D%0A-%20The%20deletion%20process%20will%20be%20completed%20within%2030%20days%0D%0A%0D%0AThank%20you."
+                   class="delete-button">
+                    Request Data Deletion
+                </a>
+            </div>
+
+            <p style="text-align: center; color: #7f8c8d; margin-top: 20px;">
+                By clicking the button above, your email client will open with a pre-filled data deletion request.
+            </p>
+
+            <div class="separator"></div>
+
+            <div style="background: #ffe6e6; border-left: 4px solid #e74c3c; padding: 20px; border-radius: 6px; margin-top: 30px;">
+                <h3 style="color: #c0392b; margin-bottom: 10px;">🗑️ Want to Delete Your Entire Account?</h3>
+                <p style="color: #c0392b;">If you want to delete your account completely (including account information), please visit our <a href="delete-account.html" style="color: #e74c3c; font-weight: bold; text-decoration: underline;">Account Deletion Page</a>.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="index.html" class="back-link">← Back to Privacy Policy</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>If you have any questions, contact us at: <a href="mailto:readarabicapp@gmail.com">readarabicapp@gmail.com</a></p>
+            <p style="margin-top: 10px;">&copy; 2025 Nibras Apps. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

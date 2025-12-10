@@ -112,3 +112,5 @@ If you have any questions about this Privacy Policy, please contact us:
 - By email: readarabicapp@gmail.com
 
 For privacy-related concerns or to exercise your data rights (access, deletion, correction, etc.), please include "Privacy Request" in your email subject line.
+
+**Delete Your Account:** To request account and data deletion, visit: https://kedimuzafer.github.io/screenshot-organizer-privacy/delete-account.html
